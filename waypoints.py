@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
-import pyperclip
+from . import clipboard
 
-print(pyperclip.paste())
+print(clipboard.wait())
