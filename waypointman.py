@@ -1,4 +1,17 @@
 #!/usr/bin/env python3
-from . import clipboard
+from waypoint import NotACopiedLocation, Waypoint
+import clipboard
+import logging
 
-print(clipboard.wait())
+logging.basicConfig(format="[%(asctime)s] %(levelname)s: %(message)s", level=logging.DEBUG)
+
+while True:
+    logging.debug("listening for clipboard changes")
+    clip = clipboard.wait()
+    logging.debug(repr(clip))
+    try:
+        waypoint = Waypoint.from_copied(clip)
+    except NotACopiedLocation:
+        logging.debug("not a copied location")
+        continue
+    logging.info(repr(waypoint))
