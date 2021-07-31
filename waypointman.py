@@ -5,6 +5,8 @@ import logging
 
 logging.basicConfig(format="[%(asctime)s] %(levelname)s: %(message)s", level=logging.DEBUG)
 
+OUTPUT = "test.txt"
+
 while True:
     logging.debug("listening for clipboard changes")
     clip = clipboard.wait()
@@ -15,3 +17,6 @@ while True:
         logging.debug("not a copied location")
         continue
     logging.info(repr(waypoint))
+
+    with open(OUTPUT, "a") as f:
+        f.write(str(waypoint) + "\n\n")
