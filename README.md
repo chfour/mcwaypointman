@@ -12,3 +12,9 @@ Yes, this is reinventing the wheel, yes this is stupid.
 * `-h`, `--help`: display help
 * `-v`, `--verbose`: set the logging level to debug
 * `output`: output waypoints file
+
+## epilogue
+
+You know what, I'll just install a waypoint mod. I think.
+
+I think, I think I'll do that. Tomorrow. Yeah.
